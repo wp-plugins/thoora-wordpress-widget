@@ -40,7 +40,7 @@ This section describes how to install the widget and get it working.
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0 =
 * First release, fingers crossed
 
 == Upgrade Notice ==
