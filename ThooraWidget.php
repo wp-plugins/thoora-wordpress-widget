@@ -13,7 +13,7 @@
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
  * Description: <a href="http://thoora.com" target="_blank">thoora</a> Official Wordpress widget by Thoora. Curate and publish beautiful, authoritative, topical pages on the subjects you care most about. Leverage Thoora's powerful aggregation engine to discover and deliver a relevant stream of high quality content; then use powerful curation tools to refine pages to your liking. Share them with your friends.
- * Version: 1.0
+ * Version: 1.1
  * Author: Dr. Scientist Marius C.
  * Author URI: http://thoora.com
  * 
