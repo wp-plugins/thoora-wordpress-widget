@@ -1,0 +1,302 @@
+@font-face {
+	font-family: trade_gothic;
+	src: url('fonts/TradeGothicLTStd-BdCn20.eot'); /* FOR IEs */
+	src: local('trade_gothic'), url('fonts/TradeGothicLTStd-BdCn20.ttf') format('truetype'); /* for other web browsers */
+}
+
+@font-face {
+	font-family: calibri;
+	src: url('fonts/Calibri.eot'); /* FOR IEs */
+	src: local('calibri'), url('fonts/Calibri.ttf') format('truetype'); /* for other web browsers */
+}
+
+@font-face {
+	font-family: calibriBold; 
+	src: url('fonts/CalibriBold.eot'); /* FOR IEs */
+	src: local('calibriBold'), url('fonts/CalibriBold.ttf') format('truetype'); /* for other web browsers */
+}
+
+#thoora-wrapper div,
+#thoora-wrapper a {
+	font-family:calibri, sans-serif !important;
+	font-weight:normal !important;
+}
+
+div#thoora-wrapper {
+	background-color:#e6e6e6;
+	width: 254px;
+	max-height:806px;
+}
+
+#thoora-wrapper img {
+	max-width:100% !important;
+}
+#thoora-wrapper a, #thoora-wrapper a:visited, #thoora-wrapper img, #thoora-wrapper a:link {
+	text-decoration: none;
+	border-style: none;
+	color: inherit;
+	outline: 0;		
+	font-weight:normal !important;
+}
+
+#thoora-wrapper .thoora-header {
+	width:254px;
+	height:95px;
+	background: url("images/header.png") no-repeat scroll 0 0 transparent;
+	position:relative;
+}
+
+#thoora-wrapper .thoora-header .thoora-topicTitle {
+	color: white;
+    font-family: trade_gothic, sans-serif !important;
+    font-size: 15pt;
+    height: 25px;
+    left: 46px;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 6px;
+    width: 205px;
+}
+
+#thoora-wrapper .thoora-header .thoora-topicInfo {
+    color: #9D9D9D;
+    font-size: 9pt;
+    height: 14px;
+    left: 46px;
+    position: absolute;
+    top: 33px;
+    width: 145px;
+}
+
+#thoora-wrapper .thoora-header .thoora-topicImg {
+	left:8px;
+	top:11px;
+	position:absolute;
+}
+
+#thoora-wrapper .thoora-header .thoora-topicImg,
+#thoora-wrapper .thoora-header .thoora-topicImg img {
+	width:32px;
+	height:32px;
+}
+
+#thoora-wrapper .thoora-arrowRow {
+	height:20px;
+	width: 254px;
+	background-color:#e6e6e6;
+	cursor:pointer;
+	opacity:0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+#thoora-wrapper .thoora-arrowRow.thoora-arrowHide {
+	cursor:default;
+}
+
+#thoora-wrapper .thoora-arrowContainer {
+	width:21px;
+	height:10px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:5px;
+}
+
+
+#thoora-wrapper .thoora-arrowContainer img {
+	float:left;			
+}
+
+#thoora-wrapper .thoora-scroll {
+	max-height:620px;
+	overflow:hidden;
+	min-height:197px;
+	position:relative;
+}
+#thoora-wrapper .th-custom-container {
+	width: 242px;
+	background-color:#EFEFEF;
+	left:6px;
+	position:relative;
+	height:197px;
+	margin-bottom:11px;
+}
+#thoora-wrapper .th-custom-containerContent  {
+	position:relative;
+	width:226px;
+	height:189px;
+	left:8px;
+	top:4px;
+}
+#thoora-wrapper .th-custom-containerContent a {
+	color: #4A4A4A;
+}
+#thoora-wrapper .th-custom-typeIcon  {
+	width:20px;
+	height:20px;			
+	margin-bottom: 6px;
+}
+#thoora-wrapper .th-custom-typeIcon img  {
+	width:20px;
+	height:20px;
+}
+#thoora-wrapper .th-custom-innerContent  {
+	width:226px;
+	height:166px;
+	position:relative;
+}
+
+
+#thoora-wrapper .th-custom-containerContent .news.withPic .title  {
+    font-size: 12pt;
+    font-family: calibriBold, trade_gothic, sans-serif !important;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 226px;
+}
+
+#thoora-wrapper .th-custom-containerContent .news.noPic .title  {
+        font-family: calibriBold,trade_gothic,sans-serif !important;
+    font-size: 12pt;
+    line-height: 16px;
+    max-height: 40px;
+    overflow: hidden;
+    padding-bottom: 5px;
+    width: 226px;
+}
+#thoora-wrapper .th-custom-containerContent .news.noPic .desc  {
+        font-size: 9pt;
+    line-height: 16px;
+    max-height: 125px;
+    min-height: 95px;
+    overflow: hidden;
+    width: 226px;
+}
+#thoora-wrapper .th-custom-containerContent .news.withPic .date  {
+	font-size: 8pt;
+    position: absolute;
+    text-align: right;
+    bottom:0px;
+    right:0px;
+    color: #9D9D9D;
+}
+#thoora-wrapper .th-custom-containerContent .news.noPic .date  {
+	font-size: 8pt;
+    position: absolute;
+    text-align: right;
+    bottom:0px;
+    right:0px;
+    width:226px;
+    background-color:#EFEFEF;
+    color: #9D9D9D;
+}
+#thoora-wrapper .th-custom-containerContent .news.withPic .image  {
+	width:226px;
+	height:133px;
+}
+#thoora-wrapper .th-custom-containerContent .news.withPic image img {
+	width:226px;
+}
+
+#thoora-wrapper .th-custom-containerContent .tweets .text {
+    background-color:#444444;
+    position:relative;
+    white-space:normal;
+    color: #EFEFEF;
+    font-size: 10pt;
+    padding: 14px 12px 0;
+    word-wrap: break-word;
+    width:203px;
+    height:106px;
+    line-height:20px;
+}
+
+#thoora-wrapper .th-custom-containerContent .tweets .text .twitterLink,
+#thoora-wrapper .th-custom-containerContent .tweets .text .twitterLink a {
+	color: #96B800 !important;
+}
+
+#thoora-wrapper .th-custom-containerContent .tweets .arrow {
+    width:14px;
+    height:7px;		    
+    left:20px;
+    position:relative;
+}
+#thoora-wrapper .th-custom-containerContent .tweets .arrow img {
+    width:14px;
+    height:7px;		    
+    float:left;
+}
+#thoora-wrapper .th-custom-containerContent .tweets .authorRow {
+    height:19px;
+    width:226px;
+}
+#thoora-wrapper .th-custom-containerContent .tweets .authorRow .image {
+    height:19px;
+    width:19px;
+    float:left;
+}
+#thoora-wrapper .th-custom-containerContent .tweets .authorRow .image img {
+    height:19px;
+    width:19px;
+}
+#thoora-wrapper .th-custom-containerContent .tweets .authorRow .name {
+    font-size:9pt;
+    padding-top:1px;
+	font-family: calibriBold, trade_gothic, sans-serif !important;
+	width:150px;
+	float:left;
+	padding-left:6px;
+}
+#thoora-wrapper .th-custom-containerContent .tweets .infoRow {
+	color: #9D9D9D;
+    height:12px;
+    width:226px;
+    font-size:8pt;
+    position:absolute;
+    bottom:6px;
+    
+}
+#thoora-wrapper .th-custom-containerContent .tweets .infoRow .username {
+    width:70px;
+    float:left;
+    letter-spacing:1px;
+}
+#thoora-wrapper .th-custom-containerContent .tweets .infoRow .date {
+    width:150px;
+    float:right;
+}
+
+#thoora-wrapper .thoora-footer {
+	width:254px;
+	height:51px;
+}
+
+#thoora-wrapper .thoora-button a {
+	 -moz-user-select: none;
+    background-color: #3A3A3A;
+    border-color: #999999;
+    border-top: 2px solid #999999;
+    bottom: 7px;
+    cursor: pointer;
+    font-family: trade_gothic, sans-serif !important;
+    font-size: 11pt;
+    height: 20px;
+    left: 28px;
+    line-height: 16px;
+    padding-top: 3px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    width: 200px;	
+}
+
+#thoora-wrapper .thoora-button,
+#thoora-wrapper .thoora-button a {
+	color:white;
+}
+
+#thoora-wrapper .thoora-button.pressed {
+	border-top: medium none;
+    margin-bottom: 2px;
+}
