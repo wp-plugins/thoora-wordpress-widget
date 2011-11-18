@@ -24,7 +24,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 define('THOORA_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 
 /** Prefix of API call **/
-define('THOORA_API_URL', "http://thoora.com/mariusapi/api/1/");
+define('THOORA_API_URL', "http://thoora.com/api/1/");
 
 //build an array of settings
 $docWidget = array(
