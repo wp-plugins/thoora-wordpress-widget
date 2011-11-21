@@ -39,6 +39,9 @@ This section describes how to install the widget and get it working.
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.2 =
+* Removed a function that was causing problems
+
 = 1.1 =
 Fixed title and date in news boxes
 
@@ -46,6 +49,9 @@ Fixed title and date in news boxes
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.2 =
+!Important! Upgrade if you are receiving an error 
+
 = 1.1 =
 Fixes a few visual bugs
 
