@@ -13,7 +13,7 @@
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
  * Description: <a href="http://thoora.com" target="_blank">thoora</a> Official Wordpress widget by Thoora. Curate and publish beautiful, authoritative, topical pages on the subjects you care most about. Leverage Thoora's powerful aggregation engine to discover and deliver a relevant stream of high quality content; then use powerful curation tools to refine pages to your liking. Share them with your friends.
- * Version: 1.2
+ * Version: 1.3
  * Author: Dr. Scientist Marius C.
  * Author URI: http://thoora.com
  * 
@@ -416,34 +416,9 @@ function thoora_prepare_twitter_text($text, $linkClass) {
 }
 
 function thoora_prepareOutput($string){
-	return (htmlentities(strip_tags(html_entity_decode(thoora_only_utf8(thoora_unenc_utf16_code_units($string)), ENT_QUOTES, "UTF-8")), ENT_QUOTES, "UTF-8"));
+	return $string;
 }
 
-
-//converts things like /u201d to proper html entities
-function thoora_unenc_utf16_code_units($string) {
-    /* go for possible surrogate pairs first */
-   /* $string = preg_replace_callback(
-        '/\\\\U(D[89ab][0-9a-f]{2})\\\\U(D[c-f][0-9a-f]{2})/i',
-        function ($matches) {
-            $hi_surr = hexdec($matches[1]);
-            $lo_surr = hexdec($matches[2]);
-            $scalar = (0x10000 + (($hi_surr & 0x3FF) << 10) |
-                ($lo_surr & 0x3FF));
-            return "&#x" . dechex($scalar) . ";";
-        }, $string);
-    
-    $string = preg_replace_callback('/\\\\U([0-9a-f]{4})/i',
-        function ($matches) {
-            //just to remove leading zeros
-            return "&#x" . dechex(hexdec($matches[1])) . ";";
-        }, $string);*/
-    return $string;
-}
- 
-function thoora_only_utf8($string){	
-	return preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $string);	
-}
 
 /**
  * Register a New Master Widget
