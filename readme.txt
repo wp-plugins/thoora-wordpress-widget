@@ -33,17 +33,37 @@ This section describes how to install the widget and get it working.
 2. Make sure your topic is set to PUBLIC
 3. Make sure there is data to provide. For example, make sure there are favorites if you decide to show the favorites section
 
+= I'm getting an error when installing the widget =
+There were problems with older versions of PHP < 5.3 but update to the newest version and the problem should be resolved. 
+
 == Screenshots ==
 
 1. The widget in action pulling data from http://thoora.com/mcmaxx/pro-minecraft news section
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.3 =
+* Some CSS changes
+* Moved all sanitization to the API rather than this
 
-= 1.0.0 =
+= 1.2 =
+* Removed a function that was causing problems
+
+= 1.1 =
+Fixed title and date in news boxes
+
+= 1.0 =
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.3 =
+!Important! Upgrade for functional and visual improvements
+
+= 1.2 =
+!Important! Upgrade if you are receiving an error 
+
+= 1.1 =
+Fixes a few visual bugs
 
 = 1.0 =
 This is the base version
