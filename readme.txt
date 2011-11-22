@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: mcmaxx
+Contributors: Marius@Thoora
 Donate link: http://thoora.com
 Tags: curate, news, content, blog, curation, widget, RSS feed, RSS parser, content aggregator, twitter, image, vertical
 Requires at least: 3.2.1
@@ -18,7 +18,7 @@ Share them with your friends.
 
 == Installation ==
 
-This section describes how to install the widget and get it working.
+This section describes how to install the widget **manually** and get it working.
 
 1. Unpack and install the Thoora widget folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
@@ -42,6 +42,10 @@ There were problems with older versions of PHP < 5.3 but update to the newest ve
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.4 =
+* Added tracking for API calls to see where they're coming from
+* Added some error catching
+
 = 1.3 =
 * Some CSS changes
 * Moved all sanitization to the API rather than this
@@ -56,6 +60,9 @@ Fixed title and date in news boxes
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.4 =
+Minor update that should better handle errors
+
 = 1.3 =
 !Important! Upgrade for functional and visual improvements
 
@@ -67,3 +74,6 @@ Fixes a few visual bugs
 
 = 1.0 =
 This is the base version
+
+== Demo ==
+[Thoora Blog](http://blog.thoora.com "Thoora Blog")

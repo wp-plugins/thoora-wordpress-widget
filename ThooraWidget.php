@@ -1,6 +1,6 @@
 <?php 
 /**
- * @Author	Dr. Scientist Marius C.
+ * @Author	Marius@Thoora
  * @link http://thoora.com
  * @Package Wordpress
  * @SubPackage Widgets
@@ -13,8 +13,8 @@
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
  * Description: <a href="http://thoora.com" target="_blank">thoora</a> Official Wordpress widget by Thoora. Curate and publish beautiful, authoritative, topical pages on the subjects you care most about. Leverage Thoora's powerful aggregation engine to discover and deliver a relevant stream of high quality content; then use powerful curation tools to refine pages to your liking. Share them with your friends.
- * Version: 1.3
- * Author: Dr. Scientist Marius C.
+ * Version: 1.4
+ * Author: Marius@Thoora
  * Author URI: http://thoora.com
  * 
  */
@@ -25,6 +25,12 @@ define('THOORA_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 
 /** Prefix of API call **/
 define('THOORA_API_URL', "http://thoora.com/api/1/");
+
+/** Your site URL for our debugging purposes **/
+define('THOORA_YOUR_URL', home_url());
+
+/** Link to the wordpress Thoora page **/
+define('THOORA_WORDPRESS_URL', "http://wordpress.org/extend/plugins/thoora-wordpress-widget/faq/");
 
 //build an array of settings
 $docWidget = array(
@@ -102,7 +108,7 @@ function thoora_getVid($url, $apiKey) {
 	
 	$apiCall = THOORA_API_URL."topics/topic_id.json";
 	
-	$data = file_get_contents("$apiCall?api_token=$apiKey&screen_name=$user&topic_name_url=$topic");
+	$data = file_get_contents("$apiCall?api_token=$apiKey&screen_name=$user&topic_name_url=$topic&url=".urlencode(THOORA_YOUR_URL));
 
 	$data = json_decode($data);
 
@@ -134,7 +140,7 @@ function thoora_fetchContent($vid, $type, $count, $apiKey){
 	}
 	
 
-	$data = file_get_contents("$apiCall?api_token=$apiKey&topic_id=$vid&stories_per_page=$count");
+	$data = file_get_contents("$apiCall?api_token=$apiKey&topic_id=$vid&stories_per_page=$count&url=".urlencode(THOORA_YOUR_URL));
 	
 	return json_decode($data);
 }
@@ -146,7 +152,7 @@ function thoora_fetchContent($vid, $type, $count, $apiKey){
 function thoora_fetchInfo($vid, $apiKey) {
 	$apiCall = THOORA_API_URL."topics/info.json";
 	
-	$data = file_get_contents("$apiCall?api_token=$apiKey&topic_id=$vid");
+	$data = file_get_contents("$apiCall?api_token=$apiKey&topic_id=$vid&url=".urlencode(THOORA_YOUR_URL));
 	
 	return json_decode($data);
 }
@@ -165,93 +171,102 @@ function thoora_image($image){
 
 function thoora_initView( $args )
 {
-	extract($args);
+	try {
+		extract($args);
+		
+		$url 		= $args['params']['url'];
+		$type 		= strtolower($args['params']['infoType']);
+		$count 		= (intval($count)>0)?$count:0;
+		$apiKey 	= $args['params']['apiKey'];
+		$linkThoora = (bool)$args['params']['allowThoora'];
+		
+		if ($url == "" || $type == "" || $apiKey == "") throw new Exception;
+		
+		$vid 	= thoora_getVid($url, $apiKey);
+		$data 	= thoora_fetchContent($vid, $type, $count, $apiKey);
+		$info 	= thoora_fetchInfo($vid, $apiKey);
 	
-	$url 		= $args['params']['url'];
-	$type 		= strtolower($args['params']['infoType']);
-	$count 		= (intval($count)>0)?$count:0;
-	$apiKey 	= $args['params']['apiKey'];
-	$linkThoora = (bool)$args['params']['allowThoora'];
+		if (!$vid || !$info) throw new Exception;
+		
+		$topicName = strtoupper($info->topic_name);
+		$userName = $info->screen_name;
+		$followers = $info->followers_count;
+		$topicImg = $info->topic_image_small;
+		$typeIcon = $type;
 	
-	$vid 	= thoora_getVid($url, $apiKey);
-	$data 	= thoora_fetchContent($vid, $type, $count, $apiKey);
-	$info 	= thoora_fetchInfo($vid, $apiKey);
+		switch ($type){
+			case "news":
+				$data = $data->stories;
+				break;
+			case "favorites":
+				$data = $data->favorites;
+				break;
+			case "images":
+				$data = $data->images;
+				break;
+			case "feeds":
+				$data = $data->articles;
+				break;
+			case "tweets":
+				$data = $data->tweets;
+				break;
+		}
 	
-	$topicName = strtoupper($info->topic_name);
-	$userName = $info->screen_name;
-	$followers = $info->followers_count;
-	$topicImg = $info->topic_image_small;
-	$typeIcon = $type;
-
-	switch ($type){
-		case "news":
-			$data = $data->stories;
-			break;
-		case "favorites":
-			$data = $data->favorites;
-			break;
-		case "images":
-			$data = $data->images;
-			break;
-		case "feeds":
-			$data = $data->articles;
-			break;
-		case "tweets":
-			$data = $data->tweets;
-			break;
-	}
-
-	?>
-
-	<div id="thoora-wrapper">
-		<div class="thoora-header">
-			<div class="thoora-topicImg"><img src="<?= $topicImg; ?>" /></div>
-			<div class="thoora-topicTitle"><?= $topicName; ?></div>
-			<div class="thoora-topicInfo">By <?= $userName; ?> &nbsp;&nbsp;<?= $followers?> Follower<?= ($followers == 1)?"":"s"; ?></div>
-			<? if ($linkThoora): ?>
-				<div class="thoora-button">
+		?>
+	
+		<div id="thoora-wrapper">
+			<div class="thoora-header">
+				<div class="thoora-topicImg"><img src="<?= $topicImg; ?>" /></div>
+				<div class="thoora-topicTitle"><?= $topicName; ?></div>
+				<div class="thoora-topicInfo">By <?= $userName; ?> &nbsp;&nbsp;<?= $followers?> Follower<?= ($followers == 1)?"":"s"; ?></div>
+				<? if ($linkThoora): ?>
+					<div class="thoora-button">
+						<a href="<?= $url; ?>" target="_blank">
+							FOLLOW THIS TOPIC ON THOORA
+						</a>
+					</div>
+				<? endif; ?>
+				
+			</div>
+			<div class="thoora-up thoora-arrowRow thoora-arrowHide">
+				<div class="thoora-arrowContainer">
+					<img src="<?= thoora_image("widget_arrowup.png")?>" />
+				</div>
+			</div>
+			<div class="thoora-scroll">
+			<? foreach ($data as $k => $v): ?>
+				<? $typeIcon 	= thoora_checkIconType($v, $type); ?>
+				<? $typeContent = thoora_checkContentType($v, $type); ?>
+				<div class="th-custom-container <?= "thoora$k" ?>">
+					<div class="th-custom-containerContent">
+						<div class="th-custom-typeIcon"><img src="<?= thoora_image("{$typeIcon}_ico.png")?>" /></div>
+							<div class="th-custom-innerContent">										
+								<?= thoora_htmlContainer($v, $typeContent); ?>
+							</div>
+					</div>
+				</div>
+			<? endforeach;?>
+			</div>
+			<div class="thoora-down thoora-arrowRow thoora-arrowHide">
+				<div class="thoora-arrowContainer">
+					<img src="<?= thoora_image("widget_arrowdown.png")?>" />
+				</div>
+			</div>
+			<div class="thoora-footer">
+				<? if ($linkThoora): ?>
 					<a href="<?= $url; ?>" target="_blank">
-						FOLLOW THIS TOPIC ON THOORA
+				<? endif; ?>
+						<img src="<?= thoora_image("footer.png")?>" />
+				<? if ($linkThoora): ?>
 					</a>
-				</div>
-			<? endif; ?>
-			
-		</div>
-		<div class="thoora-up thoora-arrowRow thoora-arrowHide">
-			<div class="thoora-arrowContainer">
-				<img src="<?= thoora_image("widget_arrowup.png")?>" />
+				<? endif; ?>
 			</div>
 		</div>
-		<div class="thoora-scroll">
-		<? foreach ($data as $k => $v): ?>
-			<? $typeIcon 	= thoora_checkIconType($v, $type); ?>
-			<? $typeContent = thoora_checkContentType($v, $type); ?>
-			<div class="th-custom-container <?= "thoora$k" ?>">
-				<div class="th-custom-containerContent">
-					<div class="th-custom-typeIcon"><img src="<?= thoora_image("{$typeIcon}_ico.png")?>" /></div>
-						<div class="th-custom-innerContent">										
-							<?= thoora_htmlContainer($v, $typeContent); ?>
-						</div>
-				</div>
-			</div>
-		<? endforeach;?>
-		</div>
-		<div class="thoora-down thoora-arrowRow thoora-arrowHide">
-			<div class="thoora-arrowContainer">
-				<img src="<?= thoora_image("widget_arrowdown.png")?>" />
-			</div>
-		</div>
-		<div class="thoora-footer">
-			<? if ($linkThoora): ?>
-				<a href="<?= $url; ?>" target="_blank">
-			<? endif; ?>
-					<img src="<?= thoora_image("footer.png")?>" />
-			<? if ($linkThoora): ?>
-				</a>
-			<? endif; ?>
-		</div>
-	</div>
-	<?php
+		<?php
+	}
+	catch (Exception $e){
+		echo "<a href='".THOORA_WORDPRESS_URL."' target='_blank'>Thoora widget not properly configured</a>";
+	}
 }
 
 /*
