@@ -13,7 +13,7 @@
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
  * Description: <a href="http://thoora.com" target="_blank">thoora</a> Official Wordpress widget by Thoora. Curate and publish beautiful, authoritative, topical pages on the subjects you care most about. Leverage Thoora's powerful aggregation engine to discover and deliver a relevant stream of high quality content; then use powerful curation tools to refine pages to your liking. Share them with your friends.
- * Version: 1.4
+ * Version: 1.5
  * Author: Marius@Thoora
  * Author URI: http://thoora.com
  * 
@@ -180,8 +180,10 @@ function thoora_initView( $args )
 		$apiKey 	= $args['params']['apiKey'];
 		$linkThoora = (bool)$args['params']['allowThoora'];
 		
-		if ($url == "" || $type == "" || $apiKey == "") throw new Exception;
 		
+		
+		if ($url == "" || $type == "" || $apiKey == "") throw new Exception;
+
 		$vid 	= thoora_getVid($url, $apiKey);
 		$data 	= thoora_fetchContent($vid, $type, $count, $apiKey);
 		$info 	= thoora_fetchInfo($vid, $apiKey);
@@ -336,30 +338,30 @@ function thoora_htmlContainer($data, $type) {
 
 function thoora_htmlTweetsbox($data) {
 	$html = "";
-	$html .= "<div class='tweets'>";
+	$html .= "<div class='thoora-tweets'>";
 	
-		$html .= "<div class='text'>";
-			$html .= thoora_prepare_twitter_text($data['text'], "twitterLink");
+		$html .= "<div class='thoora-text'>";
+			$html .= thoora_prepare_twitter_text($data['text'], "thoora-twitterLink");
 		$html .= "</div>";
 		
-		$html .= "<div class='arrow'><img src='".thoora_image("twitter_arrow.png")."' /></div>";
+		$html .= "<div class='thoora-arrow'><img src='".thoora_image("twitter_arrow.png")."' /></div>";
 		
-		$html .= "<div class='authorRow'>";
-			$html .= "<div class='image'>";
+		$html .= "<div class='thoora-authorRow'>";
+			$html .= "<div class='thoora-image'>";
 				$html .= "<img src='{$data['image']}' />";
 			$html .= "</div>";
-			$html .= "<div class='name'>";
+			$html .= "<div class='thoora-name'>";
 				$html .= "<a href='{$data['url']}' target='_blank'>";
 					$html .= $data['name'];
 				$html .= '</a>';
 			$html .= "</div>";
 		$html .= "</div>";
 		
-		$html .= "<div class='infoRow'>";
-			$html .= "<div class='username'>";
+		$html .= "<div class='thoora-infoRow'>";
+			$html .= "<div class='thoora-username'>";
 				$html .= $data['username'];
 			$html .= "</div>";
-			$html .= "<div class='date'>";
+			$html .= "<div class='thoora-date'>";
 				$html .= $data['date'];
 			$html .= "</div>";
 		$html .= "</div>";
@@ -379,18 +381,18 @@ function thoora_htmlNewsbox($data){
 	$html = "<a href='{$data['url']}' target='_blank'>";
 	if ($data['image']){
 		if (strlen($data['title']) > 30) $data['title'] = substr($data['title'], 0, 30)."...";
-		$html .= "<div class= 'news withPic'>";
-		$html .= "<div class='image'><img src='{$data['image']}' /></div>";
-		$html .= "<div class='title'>{$data['title']}</div>";
-		$html .= "<div class='date'>{$data['date']}</div>";
+		$html .= "<div class= 'thoora-news thoora-withPic'>";
+		$html .= "<div class='thoora-image'><img src='{$data['image']}' /></div>";
+		$html .= "<div class='thoora-title'>{$data['title']}</div>";
+		$html .= "<div class='thoora-date'>{$data['date']}</div>";
 		$html .= "</div>";
 	}
 	else {
 		if (strlen($data['title']) > 60) $data['title'] = substr($data['title'], 0, 60)."...";
-		$html .= "<div class= 'news noPic'>";
-		$html .= "<div class='title'>{$data['title']}</div>";
-		$html .= "<div class='desc'>{$data['desc']}</div>";
-		$html .= "<div class='date'>{$data['date']}</div>";
+		$html .= "<div class= 'thoora-news thoora-noPic'>";
+		$html .= "<div class='thoora-title'>{$data['title']}</div>";
+		$html .= "<div class='thoora-desc'>{$data['desc']}</div>";
+		$html .= "<div class='thoora-date'>{$data['date']}</div>";
 		$html .= "</div>";
 	}
 	
@@ -431,7 +433,7 @@ function thoora_prepare_twitter_text($text, $linkClass) {
 }
 
 function thoora_prepareOutput($string){
-	return $string;
+	return html_entity_decode($string, ENT_QUOTES, "UTF-8");
 }
 
 

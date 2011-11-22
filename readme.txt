@@ -42,6 +42,10 @@ There were problems with older versions of PHP < 5.3 but update to the newest ve
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.5 =
+* Added prefix on ALL CSS classes
+* Fixed weird <?> appearing on page
+
 = 1.4 =
 * Added tracking for API calls to see where they're coming from
 * Added some error catching
@@ -60,6 +64,9 @@ Fixed title and date in news boxes
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.5 =
+Update if you're having problems with the visual layout
+
 = 1.4 =
 Minor update that should better handle errors
 

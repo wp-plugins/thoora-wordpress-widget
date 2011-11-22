@@ -151,7 +151,7 @@ div#thoora-wrapper {
 }
 
 
-#thoora-wrapper .th-custom-containerContent .news.withPic .title  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-title  {
     font-size: 12pt;
     font-family: calibriBold, trade_gothic, sans-serif !important;
     line-height: 20px;
@@ -160,7 +160,7 @@ div#thoora-wrapper {
     width: 226px;
 }
 
-#thoora-wrapper .th-custom-containerContent .news.noPic .title  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-noPic .thoora-title  {
         font-family: calibriBold,trade_gothic,sans-serif !important;
     font-size: 12pt;
     line-height: 17px;
@@ -169,7 +169,7 @@ div#thoora-wrapper {
     padding-bottom: 7px;
     width: 226px;
 }
-#thoora-wrapper .th-custom-containerContent .news.noPic .desc  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-noPic .thoora-desc  {
     font-size: 9pt;
     line-height: 14px;
     max-height: 125px;
@@ -179,7 +179,7 @@ div#thoora-wrapper {
     letter-spacing: 0.3px;
     color: #6D6D6D;
 }
-#thoora-wrapper .th-custom-containerContent .news.withPic .date  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-date  {
 	font-size: 8pt;
     position: absolute;
     text-align: right;
@@ -187,7 +187,7 @@ div#thoora-wrapper {
     right:0px;
     color: #9D9D9D;
 }
-#thoora-wrapper .th-custom-containerContent .news.noPic .date  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-noPic .thoora-date  {
 	font-size: 8pt;
     position: absolute;
     text-align: right;
@@ -198,15 +198,15 @@ div#thoora-wrapper {
     color: #9D9D9D;
     height:16px;
 }
-#thoora-wrapper .th-custom-containerContent .news.withPic .image  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-image  {
 	width:226px;
 	height:133px;
 }
-#thoora-wrapper .th-custom-containerContent .news.withPic image img {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-image img {
 	width:226px;
 }
 
-#thoora-wrapper .th-custom-containerContent .tweets .text {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-text {
     background-color:#444444;
     position:relative;
     white-space:normal;
@@ -219,36 +219,36 @@ div#thoora-wrapper {
     line-height:16px;
 }
 
-#thoora-wrapper .th-custom-containerContent .tweets .text .twitterLink,
-#thoora-wrapper .th-custom-containerContent .tweets .text .twitterLink a {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-text .thoora-twitterLink,
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-text .thoora-twitterLink a {
 	color: #96B800 !important;
 }
 
-#thoora-wrapper .th-custom-containerContent .tweets .arrow {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-arrow {
     width:14px;
     height:7px;		    
     left:20px;
     position:relative;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .arrow img {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-arrow img {
     width:14px;
     height:7px;		    
     float:left;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow {
     height:19px;
     width:226px;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow .image {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow .thoora-image {
     height:19px;
     width:19px;
     float:left;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow .image img {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow .thoora-image img {
     height:19px;
     width:19px;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow .name {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow .thoora-name {
     font-size:9pt;
     padding-top:1px;
 	font-family: calibriBold, trade_gothic, sans-serif !important;
@@ -256,7 +256,7 @@ div#thoora-wrapper {
 	float:left;
 	padding-left:6px;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .infoRow {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-infoRow {
 	color: #9D9D9D;
     height:12px;
     width:226px;
@@ -266,12 +266,12 @@ div#thoora-wrapper {
     letter-spacing:0.5px;
     
 }
-#thoora-wrapper .th-custom-containerContent .tweets .infoRow .username {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-infoRow .thoora-username {
     width:70px;
     float:left;
    
 }
-#thoora-wrapper .th-custom-containerContent .tweets .infoRow .date {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-infoRow .thoora-date {
     width:150px;
     float:right;
     text-align:right;
