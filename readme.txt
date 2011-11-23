@@ -6,15 +6,21 @@ Requires at least: 3.2.1
 Tested up to: 3.2.1
 Stable tag: trunk
 
-This widget provides content from Thoora.com such as news, blogs, tweets and images based on topic verticals that the user curated. 
+Enhance your blog with a fresh, relevant stream of content, including news, blogs, images, and tweets, from any topic created on Thoora.
 
 == Description ==
 
-This widget provides content from Thoora.com such as news, blogs, tweets and images based on topic verticals that the user curated. 
+The Thoora widget allows you to quickly and easily compliment and enhance your WordPress blog with a fresh, relevant stream of content, including news, blogs, 
+tweets and images. This widget helps to keep your site fresh and your users engaged.
 
-Curate and publish beautiful, authoritative, topical pages on the subjects you care most about. Leverage Thoora's powerful aggregation 
-engine to discover and deliver a relevant stream of high quality content; then use powerful curation tools to refine pages to your liking. 
-Share them with your friends.
+Content is pulled in from any topic created on Thoora.  It can be your own topic (register for a free account on http://thoora.com to start creating topics) or a public 
+topic that another user created.  You can decide what content to feature in your widget – either news, RSS feeds, tweets, images, or your own curated Favorites. 
+See the Thoora blog for an example of a standard widget with news content: http://blog.thoora.com
+
+What is Thoora?  Thoora is a content discovery engine that gives you a highly personalized feed of content on any topic you care about – anything from Android 
+phones to social media trends to zombie movies.  Simply enter keywords to create your topic and the Thoora engine immediately scours thousands of sources on the
+web to serve up what’s most relevant.  You can save results to your Favorites page, or delete articles you don’t like.  The Thoora engine learns from your
+actions to continually improve the content it delivers.  You can sign up for a free Thoora account at http://www.thoora.com
 
 == Installation ==
 
@@ -36,12 +42,35 @@ This section describes how to install the widget **manually** and get it working
 = I'm getting an error when installing the widget =
 There were problems with older versions of PHP < 5.3 but update to the newest version and the problem should be resolved. 
 
+= How can I do advanced customization of my widget? =
+
+Things like colors, heights and widths can all be fine tuned with a little bit of PHP and CSS knowledge. Simply edit the enclosed files.
+
+= I don’t like some of the content appearing in my widget.  How do I control what content appears? =
+
+You can control the content by featuring your Favorites page.  Your Favorites page is your own curated selection of content, which can include news, blog posts, 
+images and tweets.  Select ‘Favorites’ in the ‘Type’ drop-down menu.
+
+Alternately removing items from your Thoora topic feed will ensure they don't show up in your widget.
+
+= Why is only versions > 3.2.* of Wordpress supported? =
+There is very little fancy Wordpress functionality used. Chances are this widget works on older versions. If you get it working on an older version let us know
+and we'll update this page!
+
+= I have bugs to report and may have more questions =
+
+Post them here
+http://getsatisfaction.com/thoora
+
 == Screenshots ==
 
 1. The widget in action pulling data from http://thoora.com/mcmaxx/pro-minecraft news section
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.6 =
+* Updated some readme text, not a big deal
+
 = 1.5 =
 * Added prefix on ALL CSS classes
 * Fixed weird <?> appearing on page
@@ -58,12 +87,14 @@ There were problems with older versions of PHP < 5.3 but update to the newest ve
 * Removed a function that was causing problems
 
 = 1.1 =
-Fixed title and date in news boxes
+* Fixed title and date in news boxes
 
 = 1.0 =
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.6 =
+Minor update in readme.txt. Update if you're feeling brave.
 = 1.5 =
 Update if you're having problems with the visual layout
 
