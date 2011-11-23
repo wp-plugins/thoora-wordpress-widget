@@ -52,9 +52,9 @@ div#thoora-wrapper {
     font-size: 15pt;
     height: 25px;
     left: 46px;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
     position: absolute;
-    top: 6px;
+    top: 3px;
     width: 205px;
 }
 
@@ -64,7 +64,7 @@ div#thoora-wrapper {
     height: 14px;
     left: 46px;
     position: absolute;
-    top: 33px;
+    top: 30px;
     width: 145px;
 }
 
@@ -113,12 +113,17 @@ div#thoora-wrapper {
 	position:relative;
 }
 #thoora-wrapper .th-custom-container {
-	width: 242px;
-	background-color:#EFEFEF;
-	left:6px;
-	position:relative;
-	height:197px;
-	margin-bottom:11px;
+	background-color: #FDFDFD;
+
+    border-top: 4px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    height: 197px;
+    left: 6px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 242px;
 }
 #thoora-wrapper .th-custom-containerContent  {
 	position:relative;
@@ -133,7 +138,7 @@ div#thoora-wrapper {
 #thoora-wrapper .th-custom-typeIcon  {
 	width:20px;
 	height:20px;			
-	margin-bottom: 6px;
+	margin-bottom: 3px;
 }
 #thoora-wrapper .th-custom-typeIcon img  {
 	width:20px;
@@ -146,7 +151,7 @@ div#thoora-wrapper {
 }
 
 
-#thoora-wrapper .th-custom-containerContent .news.withPic .title  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-title  {
     font-size: 12pt;
     font-family: calibriBold, trade_gothic, sans-serif !important;
     line-height: 20px;
@@ -155,24 +160,26 @@ div#thoora-wrapper {
     width: 226px;
 }
 
-#thoora-wrapper .th-custom-containerContent .news.noPic .title  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-noPic .thoora-title  {
         font-family: calibriBold,trade_gothic,sans-serif !important;
     font-size: 12pt;
-    line-height: 16px;
-    max-height: 40px;
+    line-height: 17px;
+    max-height: 30px;
     overflow: hidden;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
     width: 226px;
 }
-#thoora-wrapper .th-custom-containerContent .news.noPic .desc  {
-        font-size: 9pt;
-    line-height: 16px;
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-noPic .thoora-desc  {
+    font-size: 9pt;
+    line-height: 14px;
     max-height: 125px;
     min-height: 95px;
     overflow: hidden;
     width: 226px;
+    letter-spacing: 0.3px;
+    color: #6D6D6D;
 }
-#thoora-wrapper .th-custom-containerContent .news.withPic .date  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-date  {
 	font-size: 8pt;
     position: absolute;
     text-align: right;
@@ -180,25 +187,26 @@ div#thoora-wrapper {
     right:0px;
     color: #9D9D9D;
 }
-#thoora-wrapper .th-custom-containerContent .news.noPic .date  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-noPic .thoora-date  {
 	font-size: 8pt;
     position: absolute;
     text-align: right;
     bottom:0px;
     right:0px;
     width:226px;
-    background-color:#EFEFEF;
+    background-color:#FDFDFD;
     color: #9D9D9D;
+    height:16px;
 }
-#thoora-wrapper .th-custom-containerContent .news.withPic .image  {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-image  {
 	width:226px;
 	height:133px;
 }
-#thoora-wrapper .th-custom-containerContent .news.withPic image img {
+#thoora-wrapper .th-custom-containerContent .thoora-news.thoora-withPic .thoora-image img {
 	width:226px;
 }
 
-#thoora-wrapper .th-custom-containerContent .tweets .text {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-text {
     background-color:#444444;
     position:relative;
     white-space:normal;
@@ -208,39 +216,39 @@ div#thoora-wrapper {
     word-wrap: break-word;
     width:203px;
     height:106px;
-    line-height:20px;
+    line-height:16px;
 }
 
-#thoora-wrapper .th-custom-containerContent .tweets .text .twitterLink,
-#thoora-wrapper .th-custom-containerContent .tweets .text .twitterLink a {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-text .thoora-twitterLink,
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-text .thoora-twitterLink a {
 	color: #96B800 !important;
 }
 
-#thoora-wrapper .th-custom-containerContent .tweets .arrow {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-arrow {
     width:14px;
     height:7px;		    
     left:20px;
     position:relative;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .arrow img {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-arrow img {
     width:14px;
     height:7px;		    
     float:left;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow {
     height:19px;
     width:226px;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow .image {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow .thoora-image {
     height:19px;
     width:19px;
     float:left;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow .image img {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow .thoora-image img {
     height:19px;
     width:19px;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .authorRow .name {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-authorRow .thoora-name {
     font-size:9pt;
     padding-top:1px;
 	font-family: calibriBold, trade_gothic, sans-serif !important;
@@ -248,23 +256,25 @@ div#thoora-wrapper {
 	float:left;
 	padding-left:6px;
 }
-#thoora-wrapper .th-custom-containerContent .tweets .infoRow {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-infoRow {
 	color: #9D9D9D;
     height:12px;
     width:226px;
     font-size:8pt;
     position:absolute;
     bottom:6px;
+    letter-spacing:0.5px;
     
 }
-#thoora-wrapper .th-custom-containerContent .tweets .infoRow .username {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-infoRow .thoora-username {
     width:70px;
     float:left;
-    letter-spacing:1px;
+   
 }
-#thoora-wrapper .th-custom-containerContent .tweets .infoRow .date {
+#thoora-wrapper .th-custom-containerContent .thoora-tweets .thoora-infoRow .thoora-date {
     width:150px;
     float:right;
+    text-align:right;
 }
 
 #thoora-wrapper .thoora-footer {
@@ -280,7 +290,7 @@ div#thoora-wrapper {
     bottom: 7px;
     cursor: pointer;
     font-family: trade_gothic, sans-serif !important;
-    font-size: 11pt;
+    font-size: 10pt;
     height: 20px;
     left: 28px;
     line-height: 16px;
@@ -296,7 +306,7 @@ div#thoora-wrapper {
 	color:white;
 }
 
-#thoora-wrapper .thoora-button.pressed {
+#thoora-wrapper .thoora-button.pressed a {
 	border-top: medium none;
     margin-bottom: 2px;
 }
