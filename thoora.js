@@ -15,7 +15,7 @@ jQuery(document).ready(function () {
 		
 		function showArrow(myObj) {
 			myObj.toggleClass('thoora-arrowHide');
-			myObj.css('opacity','0.2');
+			myObj.css('opacity','1');
 			
 		}
 		
@@ -27,20 +27,7 @@ jQuery(document).ready(function () {
 		if (maxScroll > 0){	
 			showArrow(arrowDown);
 		}
-		jQuery("#thoora-wrapper .thoora-arrowRow").mouseover(function(){
-			
-			if (!jQuery(this).hasClass('thoora-arrowHide')) {
-				jQuery(this).animate({
-					opacity:1
-				}, 100);
-			}
-		}).mouseleave(function(){
-			if (!jQuery(this).hasClass('thoora-arrowHide')) {
-				jQuery(this).animate({
-						opacity:0.2
-					}, 100);
-				}
-		})
+
 		
 		jQuery("#thoora-wrapper .thoora-down").click(function(){
 			

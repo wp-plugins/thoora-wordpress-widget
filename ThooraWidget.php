@@ -13,10 +13,10 @@
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
  * Description: Enhance your blog with a fresh, relevant stream of content, including news, blogs, images, and tweets, from any topic created on <a href="http://thoora.com" target="_blank">Thoora.com</a>.
- * Version: 1.6
+ * Version: 1.7
  * Author: Marius@Thoora
  * Author URI: http://thoora.com
- * 
+ * 0
  */
 defined('ABSPATH') or die("Cannot access pages directly.");
 
@@ -176,6 +176,7 @@ function thoora_initView( $args )
 		
 		$url 		= $args['params']['url'];
 		$type 		= strtolower($args['params']['infoType']);
+		$count 		= $args['params']['maxResult'];
 		$count 		= (intval($count)>0)?$count:0;
 		$apiKey 	= $args['params']['apiKey'];
 		$linkThoora = (bool)$args['params']['allowThoora'];
@@ -224,7 +225,7 @@ function thoora_initView( $args )
 				<? if ($linkThoora): ?>
 					<div class="thoora-button">
 						<a href="<?= $url; ?>" target="_blank">
-							FOLLOW THIS TOPIC ON THOORA
+							FOLLOW
 						</a>
 					</div>
 				<? endif; ?>

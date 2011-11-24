@@ -68,6 +68,10 @@ http://getsatisfaction.com/thoora
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.7 =
+* Max Results bug fix
+* CSS Change
+
 = 1.6 =
 * Updated some readme text, not a big deal
 
@@ -93,8 +97,12 @@ http://getsatisfaction.com/thoora
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.7 =
+!Important! Bug fix and visual improvements
+
 = 1.6 =
 Minor update in readme.txt. Update if you're feeling brave.
+
 = 1.5 =
 Update if you're having problems with the visual layout
 
