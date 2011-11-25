@@ -13,10 +13,10 @@
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
  * Description: Enhance your blog with a fresh, relevant stream of content, including news, blogs, images, and tweets, from any topic created on <a href="http://thoora.com" target="_blank">Thoora.com</a>.
- * Version: 1.7
+ * Version: 1.8
  * Author: Marius@Thoora
  * Author URI: http://thoora.com
- * 0
+ * 
  */
 defined('ABSPATH') or die("Cannot access pages directly.");
 
@@ -32,6 +32,12 @@ define('THOORA_YOUR_URL', home_url());
 /** Link to the wordpress Thoora page **/
 define('THOORA_WORDPRESS_URL', "http://wordpress.org/extend/plugins/thoora-wordpress-widget/faq/");
 
+/** default topic upon install **/
+define('THOORA_DEFAULT_TOPIC', 'http://thoora.com/Thoora/social-media');
+define('THOORA_DEFAULT_TYPE', 'news');
+define('THOORA_DEFAULT_MAXRESULT', 15);
+define('THOORA_DEFAULT_APIKEY', '55d2a5bd2afd70affa9ecce5d78340c2');
+
 //build an array of settings
 $docWidget = array(
 	'id' => 'thoora-custom',	//make sure that this is unique
@@ -42,10 +48,10 @@ $docWidget = array(
 	'fields' => array(
 		array(
 			'name' => 'Thoora URL',
-			'desc' => 'Thoora Topic URL',
+			'desc' => 'Thoora Topic URL [Change it]',
 			'id' => 'url',
 			'type' => 'text',
-			'std' => ''
+			'std' => THOORA_DEFAULT_TOPIC
 		),
 		array(
 			'name' => 'Type',
@@ -58,20 +64,24 @@ $docWidget = array(
 			'desc' => 'Max number of items returned',
 			'id' => 'maxResult',
 			'type' => 'text',
-			'std' => '15'
+			'std' => THOORA_DEFAULT_MAXRESULT
 		),
 		array(
 			'name' => 'API Key',
 			'desc' => 'Used to make requests',
 			'id' => 'apiKey',
 			'type' => 'text',
-			'std' => '55d2a5bd2afd70affa9ecce5d78340c2'
+			'std' => THOORA_DEFAULT_APIKEY
 		),
 		array(
 			'name' => 'Allow links to Thoora',
 			'desc' => 'Provides best experience',
 			'id' => 'allowThoora',
 			'type' => 'checkbox'
+		),
+		array (
+			'type' => 'custom',
+			'std' => '<a href="'.THOORA_WORDPRESS_URL.'" target="_blank">Need help? Click me for FAQ</a>'
 		)
 	)
 );
@@ -174,11 +184,11 @@ function thoora_initView( $args )
 	try {
 		extract($args);
 		
-		$url 		= $args['params']['url'];
-		$type 		= strtolower($args['params']['infoType']);
-		$count 		= $args['params']['maxResult'];
-		$count 		= (intval($count)>0)?$count:0;
-		$apiKey 	= $args['params']['apiKey'];
+		$url 		= ($args['params']['url'])?$args['params']['url']:THOORA_DEFAULT_TOPIC;
+		$type 		= ($args['params']['infoType'])?strtolower($args['params']['infoType']):THOORA_DEFAULT_TYPE;
+		$count 		= ($args['params']['maxResult'])?$args['params']['maxResult']:THOORA_DEFAULT_MAXRESULT;
+		$count 		= (intval($count)>0)?$count:THOORA_DEFAULT_MAXRESULT;
+		$apiKey 	= ($args['params']['apiKey'])?$args['params']['apiKey']:THOORA_DEFAULT_APIKEY;
 		$linkThoora = (bool)$args['params']['allowThoora'];
 		
 		
@@ -231,28 +241,30 @@ function thoora_initView( $args )
 				<? endif; ?>
 				
 			</div>
-			<div class="thoora-up thoora-arrowRow thoora-arrowHide">
-				<div class="thoora-arrowContainer">
-					<img src="<?= thoora_image("widget_arrowup.png")?>" />
-				</div>
-			</div>
-			<div class="thoora-scroll">
-			<? foreach ($data as $k => $v): ?>
-				<? $typeIcon 	= thoora_checkIconType($v, $type); ?>
-				<? $typeContent = thoora_checkContentType($v, $type); ?>
-				<div class="th-custom-container <?= "thoora$k" ?>">
-					<div class="th-custom-containerContent">
-						<div class="th-custom-typeIcon"><img src="<?= thoora_image("{$typeIcon}_ico.png")?>" /></div>
-							<div class="th-custom-innerContent">										
-								<?= thoora_htmlContainer($v, $typeContent); ?>
-							</div>
+			<div class="thoora-backgroundWrapper">
+				<div class="thoora-up thoora-arrowRow thoora-arrowHide">
+					<div class="thoora-arrowContainer">
+						<img src="<?= thoora_image("widget_arrowup.png")?>" />
 					</div>
 				</div>
-			<? endforeach;?>
-			</div>
-			<div class="thoora-down thoora-arrowRow thoora-arrowHide">
-				<div class="thoora-arrowContainer">
-					<img src="<?= thoora_image("widget_arrowdown.png")?>" />
+				<div class="thoora-scroll">
+				<? foreach ($data as $k => $v): ?>
+					<? $typeIcon 	= thoora_checkIconType($v, $type); ?>
+					<? $typeContent = thoora_checkContentType($v, $type); ?>
+					<div class="th-custom-container <?= "thoora$k" ?>">
+						<div class="th-custom-containerContent">
+							<div class="th-custom-typeIcon"><img src="<?= thoora_image("{$typeIcon}_ico.png")?>" /></div>
+								<div class="th-custom-innerContent">										
+									<?= thoora_htmlContainer($v, $typeContent); ?>
+								</div>
+						</div>
+					</div>
+				<? endforeach;?>
+				</div>
+				<div class="thoora-down thoora-arrowRow thoora-arrowHide">
+					<div class="thoora-arrowContainer">
+						<img src="<?= thoora_image("widget_arrowdown.png")?>" />
+					</div>
 				</div>
 			</div>
 			<div class="thoora-footer">
