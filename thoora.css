@@ -53,14 +53,16 @@ div#thoora-wrapper {
     color: white;
     font-family: trade_gothic,sans-serif !important;
     font-size: 13pt;
-    height: 25px;
+    height: 17px;
     left: 46px;
     letter-spacing: 0.3px;
     overflow: hidden;
     position: absolute;
-    top: 5px;
+    top: 11px;
     white-space: nowrap;
     width: 200px;
+    line-height: 1 !important;
+    
 }
 
 #thoora-wrapper .thoora-header .thoora-topicInfo {
@@ -306,6 +308,7 @@ div#thoora-wrapper {
     text-align: center;
     text-transform: uppercase;
     width: 60px;
+    line-height:1.625;
 }
 
 #thoora-wrapper .thoora-button,

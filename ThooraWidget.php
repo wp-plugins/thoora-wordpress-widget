@@ -13,11 +13,12 @@
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
  * Description: Enhance your blog with a fresh, relevant stream of content, including news, blogs, images, and tweets, from any topic created on <a href="http://thoora.com" target="_blank">Thoora.com</a>.
- * Version: 1.8
+ * Version: 1.9
  * Author: Marius@Thoora
  * Author URI: http://thoora.com
  * 
  */
+
 defined('ABSPATH') or die("Cannot access pages directly.");
 
 /** Used to reference local files such as web assets and images **/
@@ -27,7 +28,7 @@ define('THOORA_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 define('THOORA_API_URL', "http://thoora.com/api/1/");
 
 /** Your site URL for our debugging purposes **/
-define('THOORA_YOUR_URL', home_url());
+define('THOORA_YOUR_URL', $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]);
 
 /** Link to the wordpress Thoora page **/
 define('THOORA_WORDPRESS_URL', "http://wordpress.org/extend/plugins/thoora-wordpress-widget/faq/");

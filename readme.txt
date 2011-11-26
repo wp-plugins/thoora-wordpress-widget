@@ -74,6 +74,10 @@ http://getsatisfaction.com/thoora
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.9 =
+* CSS Improvement
+* Better logging
+
 = 1.8 =
 * CSS Change
 * Added default value for topic
@@ -107,6 +111,9 @@ http://getsatisfaction.com/thoora
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.9 =
+Minor. Visual improvement
+
 = 1.8 =
 !Important! Bug fix and visual improvements
 
