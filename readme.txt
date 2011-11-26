@@ -10,17 +10,23 @@ Enhance your blog with a fresh, relevant stream of content, including news, blog
 
 == Description ==
 
-The Thoora widget allows you to quickly and easily compliment and enhance your WordPress blog with a fresh, relevant stream of content, including news, blogs, 
-tweets and images. This widget helps to keep your site fresh and your users engaged.
+The Thoora widget allows you to quickly and easily enhance your WordPress blog with a fresh, relevant stream of content, including
+news, blogs, tweets and images. This widget helps to keep your site fresh and your users engaged.
 
-Content is pulled in from any topic created on Thoora.  It can be your own topic (register for a free account on http://thoora.com to start creating topics) or a public 
-topic that another user created.  You can decide what content to feature in your widget – either news, RSS feeds, tweets, images, or your own curated Favorites. 
-See the Thoora blog for an example of a standard widget with news content: http://blog.thoora.com
+Content is pulled in from any topic created on Thoora. It can be your own topic (register for a free account on http://thoora.com to start
+creating topics) or a public topic that another user created. Simply enter the topic URL you want to feature. By default, the Thoora topic entered is:
 
-What is Thoora?  Thoora is a content discovery engine that gives you a highly personalized feed of content on any topic you care about – anything from Android 
-phones to social media trends to zombie movies.  Simply enter keywords to create your topic and the Thoora engine immediately scours thousands of sources on the
-web to serve up what’s most relevant.  You can save results to your Favorites page, or delete articles you don’t like.  The Thoora engine learns from your
-actions to continually improve the content it delivers.  You can sign up for a free Thoora account at http://www.thoora.com
+http://thoora.com/Thoora/social-media
+
+You can decide what type of content to feature in your widget – either news, RSS feeds, tweets, images, or your own curated Favorites. See the
+Thoora blog for an example of a standard widget with news content: http://blog.thoora.com
+
+What is Thoora? Thoora is a content discovery engine that gives you a highly personalized feed of content on any topic you care about –
+anything from Android phones to social media trends to zombie movies. Simply enter keywords to create your topic and the Thoora engine
+immediately scours thousands of sources on the web to serve up what’s most relevant. You can save results to your Favorites page, or delete
+articles you don’t like. The Thoora engine learns from your actions to continually improve the content it delivers.
+
+You can sign up for a free Thoora account at http://thoora.com
 
 == Installation ==
 
@@ -68,6 +74,14 @@ http://getsatisfaction.com/thoora
 2. The control panel. We recommend allowing links to the Thoora site for the best user experience
 
 == Changelog ==
+= 1.9 =
+* CSS Improvement
+* Better logging
+
+= 1.8 =
+* CSS Change
+* Added default value for topic
+
 = 1.7 =
 * Max Results bug fix
 * CSS Change
@@ -97,6 +111,12 @@ http://getsatisfaction.com/thoora
 * First release, fingers crossed
 
 == Upgrade Notice ==
+= 1.9 =
+Minor. Visual improvement
+
+= 1.8 =
+!Important! Bug fix and visual improvements
+
 = 1.7 =
 !Important! Bug fix and visual improvements
 
