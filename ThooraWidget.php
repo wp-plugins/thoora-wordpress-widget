@@ -12,8 +12,8 @@
  * 
  * Plugin Name: Thoora Widget
  * Plugin URI: http://thoora.com
- * Description: Enhance your blog with a fresh, relevant stream of content, including news, blogs, images, and tweets, from any topic created on <a href="http://thoora.com" target="_blank">Thoora.com</a>.
- * Version: 1.9
+ * Description: This project is currently closed. Please visit http://thoora.com
+ * Version: 2.0
  * Author: Marius@Thoora
  * Author URI: http://thoora.com
  * 
